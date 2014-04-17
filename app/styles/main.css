@@ -1,0 +1,84 @@
+body {
+  background-image: url(/images/mountains.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 25%;
+  color: #FFF;
+}
+
+.task-input {
+  margin-right: -20px;
+  margin-bottom: 30px;
+  padding-left: 30px;
+}
+
+.task-input .form-control {
+  font-weight: 600;
+  color: #FFF!important;
+  font-size: 20px;
+  border: none;
+  -webkit-box-shadow: none;
+  border-bottom: 2px solid #fff;
+  background-color: transparent;
+  border-radius: 0px;
+}
+
+.task-input .form-control::-webkit-input-placeholder { 
+  color: white; 
+}
+
+.task-show .form-control {
+  font-weight: 600;
+  color: #000;
+  background-color: rgba(255,255,255,.9);
+  border-color: (255,255,255,.6);
+}
+
+.task-show {
+  margin-right: -30px;
+  padding-left: 60px;
+}
+
+.btn-circle {
+  width: 30px!important;
+  height: 30px!important;
+  text-align: center!important;
+  padding: 6px 0!important;
+  font-size: 12px!important;
+  line-height: 1.42!important;
+  border-radius: 15px!important;
+  margin-top: 5px;
+  background-color: rgba(255,255,255,.3)!important;
+  border-color: rgba(255,255,255,.95)!important;
+  color: #FFF!important;
+}
+
+.btn-success {
+  border-radius: 30px;
+  background-color: rgba(255,255,255,.9);
+  color: #4cae4c;
+  font-weight: bold;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.tasks-card {
+  border-radius: 4px;
+  display: block;
+  padding: 10px 10px 10px 10px;
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.row-task {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.main-heading {
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+
+.quote {
+  margin-top: 80px;
+}
