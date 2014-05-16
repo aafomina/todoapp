@@ -16,7 +16,7 @@
       <div class="form-group">
         <div class="row row-task">
           <div class="col-xs-10 task-input">
-            <input type="text" class="form-control" ng-model="todo" placeholder="What do you want to do?">
+            <input type="text" class="form-control" ng-model="todo.title" placeholder="What do you want to do?">
           </div>
           <div class="col-xs-2">
             <button type="submit" class="btn btn-success" value="Add">Add</button>
@@ -28,13 +28,13 @@
     <!-- Todos list -->
     <form class="form-horizontal" role="form">
       <div ui-sortable ng-model="todos">
-        <div class="form-group" ng-repeat="todo in todos track by $index" style="padding:5px 10px; cursor: move;">
+        <div class="form-group" ng-repeat="(todoid, todo) in todos track by $index" style="padding:5px 10px; cursor: move;">
           <div class="row row-task">
             <div class="col-xs-10 task-show">
-              <input type="text" ng-model="todo" class="form-control form-task">
+              <input type="text" ng-model="todo.title" class="form-control form-task">
             </div>
             <div class="col-xs-2">
-              <button class="btn btn-default btn-circle" ng-click="removeTodo($index)" aria-label="Remove"><span class="glyphicon glyphicon-ok"></span></button>
+              <button class="btn btn-default btn-circle" ng-click="removeTodo(todoid)" aria-label="Remove"><span class="glyphicon glyphicon-ok"></span></button>
             </div>
           </div><!--row-->
         </div>

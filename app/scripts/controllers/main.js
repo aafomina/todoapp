@@ -1,21 +1,29 @@
 'use strict';
 
 angular.module('todoappApp')
-  .controller('MainCtrl', function ($scope, localStorageService) {
+  .controller('MainCtrl', function ($scope, Todo) {
 
-    var todosInStore = localStorageService.get('todos');
+  $scope.todos = Todo.all;
 
-    $scope.todos = todosInStore && todosInStore.split('\n') || [];
+  //var todosInStore = localStorageService.get('todos');
 
-    $scope.$watch('todos', function () {
-      localStorageService.add('todos', $scope.todos.join('\n'));
-    }, true);
+    //$scope.todos = todosInStore && todosInStore.split('\n') || [];
 
-    $scope.addTodo = function () {
-      $scope.todos.push($scope.todo);
-      $scope.todo = '';
+    //$scope.$watch('todos', function () {
+      //localStorageService.add('todos', $scope.todos.join('\n'));
+    //}, true);
+
+   $scope.addTodo = function () {
+      //$scope.todos.push($scope.todo);
+      //$scope.todo = '';
+      Todo.create($scope.todo).then(function() {
+        $scope.todo = {title:''};
+      });
     };
-    $scope.removeTodo = function (index) {
-      $scope.todos.splice(index, 1);
+
+  $scope.removeTodo = function (index) {
+     console.log(index);
+     Todo.delete(index);
     };
-  });
+
+});

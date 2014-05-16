@@ -7,11 +7,12 @@ angular
     'ngSanitize',
     'ngRoute',
     'ui.sortable',
-    'LocalStorageModule'
+    //'LocalStorageModule',
+    'firebase'
   ])
-  .config(['localStorageServiceProvider', function(localStorageServiceProvider){
-    localStorageServiceProvider.setPrefix('ls');
-  }])
+  //.config(['localStorageServiceProvider', function(localStorageServiceProvider){
+    //localStorageServiceProvider.setPrefix('ls');
+  //}])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -21,4 +22,5 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }).constant('FIREBASE_URL', 'https://intense-fire-8765.firebaseio.com/'); 
+
